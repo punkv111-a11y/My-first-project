@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Analysis Website</title>
+</head>
+<body>
+    <h1>Welcome to the Stock Analysis Website</h1>
+    <h2>Latest News</h2>
+    {% if articles %}
+        <ul>
+            {% for article in articles %}
+                <li>
+                    <h3><a href="{{ article.link }}" target="_blank">{{ article.title }}</a></h3>
+                    <p>{{ article.description }}</p>
+                    {% if article.analysis %}
+                        <p><strong>Analysis:</strong> {{ article.analysis }}</p>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No news available at the moment.</p>
+    {% endif %}
+</body>
+</html>

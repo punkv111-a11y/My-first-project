@@ -1,0 +1,4 @@
+Flask
+newsdataapi
+openai
+python-dotenv
